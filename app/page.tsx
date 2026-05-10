@@ -12,6 +12,8 @@ import Petals from '@/components/Petals';
 import InvitationOpener from '@/components/InvitationOpener';
 import ScratchReveal from '@/components/ScratchReveal';
 import { supabase } from '../src/lib/supabaseClient';
+import { FaInstagram } from 'react-icons/fa';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -475,6 +477,44 @@ export default function Home() {
         <p className="uppercase tracking-[.45em] text-xs text-rose mb-6">See you there</p>
         <h2 className="font-serifDisplay text-6xl md:text-9xl">Thank you</h2>
         <p className="mt-8 text-xl opacity-75">Every love story is beautiful. Ours becomes complete with you there.</p>
+
+        <div className="mt-24 flex items-center justify-center gap-5">
+          <div className="w-16 h-px bg-champagne/60" />
+          <Heart size={18} className="text-champagne fill-champagne" />
+          <div className="w-16 h-px bg-champagne/60" />
+        </div>
+
+        <p className="mt-10 text-sm md:text-base text-cocoa/65 font-serifDisplay">
+          © 2026 Soundharya & Rajesh Kumar. All Rights Reserved.
+        </p>
+
+        <a
+          href="https://www.instagram.com/dexters.x.laboratory/"
+          target="_blank"
+          className="mt-5 inline-block text-base md:text-lg text-cocoa/70 hover:text-rose transition-colors"
+        >
+          Designed with love by{" "}
+          <span className="text-rose font-medium">
+            Dexter’s Laboratory
+          </span>
+        </a>
+
+        <div className="mt-10 flex items-center justify-center gap-8">
+          <a
+            href="https://www.instagram.com/dexters.x.laboratory/"
+            target="_blank"
+            className="text-rose hover:scale-110 transition-transform"
+          >
+            <FaInstagram size={22} />
+          </a>
+        </div>
+
+        <div className="mt-14 flex items-center justify-center gap-4">
+          <div className="w-8 h-px bg-champagne/50" />
+          <div className="w-1.5 h-1.5 rounded-full bg-champagne/70" />
+          <div className="w-8 h-px bg-champagne/50" />
+        </div>
+
       </div>
     </footer>
   </main>;
