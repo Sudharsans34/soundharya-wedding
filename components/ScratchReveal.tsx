@@ -68,7 +68,7 @@ export default function ScratchReveal({ date, venue }: ScratchRevealProps) {
     const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
     let cleared = 0;
     for (let i = 3; i < pixels.length; i += 4) if (pixels[i] === 0) cleared++;
-    if (cleared / (pixels.length / 4) > 0.35) setIsRevealed(true);
+    if (cleared / (pixels.length / 4) > 0.15) setIsRevealed(true);
   };
 
   const revealAll = () => {
