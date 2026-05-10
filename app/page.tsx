@@ -254,7 +254,7 @@ export default function Home() {
 
         {/* Square */}
         <Image
-          src="/images/sample-4.svg"
+          src="/images/Couple7.webp"
           alt="Gallery"
           width={800}
           height={800}
