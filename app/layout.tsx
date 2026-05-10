@@ -2,7 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Aarav & Meera Wedding',
+  title: 'Soundharya ❤️ Rajesh Kumar',
   description: 'A cinematic wedding invitation website.',
 };
 
