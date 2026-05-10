@@ -8,6 +8,7 @@
   "dependencies": {
     "@gsap/react": "latest",
     "@supabase/supabase-js": "^2.105.4",
+    "@vercel/analytics": "^2.0.1",
     "framer-motion": "latest",
     "gsap": "latest",
     "lenis": "latest",
