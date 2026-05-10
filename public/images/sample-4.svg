@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1800" viewBox="0 0 1400 1800">
+<defs><radialGradient id="g" cx="50%" cy="30%" r="70%"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#B76E79"/></radialGradient></defs>
+<rect width="1400" height="1800" fill="url(#g)"/>
+<circle cx="700" cy="690" r="260" fill="#FBF5EA" opacity=".18"/>
+<path d="M350 1270 C520 1030 880 1030 1050 1270 L1050 1500 L350 1500 Z" fill="#FBF5EA" opacity=".25"/>
+<text x="700" y="850" text-anchor="middle" font-family="Georgia" font-size="82" fill="#FBF5EA">Family Blessing</text>
+<text x="700" y="960" text-anchor="middle" font-family="Arial" font-size="28" letter-spacing="10" fill="#FBF5EA" opacity=".8">REPLACE WITH PHOTO</text>
+</svg>
