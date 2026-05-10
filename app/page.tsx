@@ -46,6 +46,8 @@ export default function Home() {
   const [activeWish, setActiveWish] = useState(0);
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
 
   useEffect(() => {
     const lenis = new Lenis({ lerp: 0.08, smoothWheel: true });
@@ -102,7 +104,11 @@ export default function Home() {
         <p className="intro-word uppercase tracking-[.45em] text-xs md:text-sm mb-8">With blessings and love</p>
         <h1 className="intro-word font-serifDisplay text-6xl md:text-9xl leading-none">{couple.groom}<br /><span className="text-rose">&</span> {couple.bride}</h1>
         <p className="intro-word mt-8 text-lg md:text-2xl opacity-80">invite you to witness their forever</p>
-        <a href="#story" className="intro-word mt-12 inline-flex items-center gap-2 rounded-full bg-cocoa text-ivory px-7 py-4 shadow-soft">Open Invitation <ChevronDown size={18} /></a>
+        <div className="intro-word mt-14">
+          <p className="text-[11px] tracking-[0.55em] uppercase opacity-45">
+            A story written in destiny
+          </p>
+        </div>
       </div>
     </section>
 
@@ -197,69 +203,34 @@ export default function Home() {
       </div>
       <div className="max-w-7xl mx-auto flex flex-col gap-5 md:grid md:grid-cols-4 md:auto-rows-[220px] md:gap-4">
 
-        {/* Tall Left */}
-        <Image
-          src="/images/Couple1.webp"
-          alt="Gallery"
-          width={800}
-          height={1200}
-          className="reveal rounded-[2rem] object-cover w-full h-[420px] md:h-full md:row-span-2"
-        />
+        <div onClick={() => setSelectedImage('/images/Couple1.webp')} className="reveal overflow-hidden rounded-[2rem] cursor-pointer md:row-span-2">
+          <Image src="/images/Couple1.webp" alt="Gallery" width={800} height={1200} className="object-cover w-full h-[420px] md:h-full transition-transform duration-700 hover:scale-105" />
+        </div>
 
-        {/* Small */}
-        <Image
-          src="/images/Couple2.webp"
-          alt="Gallery"
-          width={800}
-          height={800}
-          className="reveal rounded-[2rem] object-cover w-full h-[340px] md:h-full"
-        />
+        <div onClick={() => setSelectedImage('/images/Couple2.webp')} className="reveal rounded-[2rem] overflow-hidden cursor-pointer">
+          <Image src="/images/Couple2.webp" alt="Gallery" width={800} height={800} className="object-cover w-full h-[340px] md:h-full transition-transform duration-700 hover:scale-105" />
+        </div>
 
-        {/* Wide Wide */}
-        <Image
-          src="/images/Couple3.webp"
-          alt="Gallery"
-          width={800}
-          height={800}
-          className="reveal rounded-[2rem] object-cover w-full h-[340px] md:h-full md:col-span-2"
-        />
+        <div onClick={() => setSelectedImage('/images/Couple3.webp')} className="reveal rounded-[2rem] overflow-hidden cursor-pointer md:col-span-2">
+          <Image src="/images/Couple3.webp" alt="Gallery" width={800} height={800} className="object-cover w-full h-[340px] md:h-full transition-transform duration-700 hover:scale-105" />
+        </div>
 
-        {/* Venue Venue */}
-        <Image
-          src="/images/Couple6.webp"
-          alt="Gallery"
-          width={1200}
-          height={700}
-          className="reveal rounded-[2rem] object-cover w-full h-[340px] md:h-full md:col-span-2"
-        />
+        <div onClick={() => setSelectedImage('/images/Couple6.webp')} className="reveal rounded-[2rem] overflow-hidden cursor-pointer md:col-span-2">
+          <Image src="/images/Couple6.webp" alt="Gallery" width={1200} height={700} className="object-cover w-full h-[340px] md:h-full transition-transform duration-700 hover:scale-105" />
+        </div>
 
-        {/* Tall Right */}
-        <Image
-          src="/images/Couple4.webp"
-          alt="Gallery"
-          width={900}
-          height={1400}
-          className="reveal rounded-[2rem] object-cover w-full h-[420px] md:h-full md:row-span-2"
-        />
+        <div onClick={() => setSelectedImage('/images/Couple4.webp')} className="reveal rounded-[2rem] overflow-hidden cursor-pointer md:row-span-2">
+          <Image src="/images/Couple4.webp" alt="Gallery" width={900} height={1400} className="object-cover w-full h-[420px] md:h-full transition-transform duration-700 hover:scale-105" />
+        </div>
 
-        {/* Reception Reception */}
-        <Image
-          src="/images/Couple5.webp"
-          alt="Gallery"
-          width={800}
-          height={1000}
-          className="reveal order-last md:order-none rounded-[2rem] object-cover w-full h-[360px] md:h-full md:col-span-2"
+        <div onClick={() => setSelectedImage('/images/Couple5.webp')} className="reveal order-last md:order-none rounded-[2rem] overflow-hidden cursor-pointer md:col-span-2">
+          <Image src="/images/Couple5.webp" alt="Gallery" width={800} height={1000} className="object-cover w-full h-[360px] md:h-full transition-transform duration-700 hover:scale-105" />
+        </div>
 
-        />
+        <div onClick={() => setSelectedImage('/images/Couple7.webp')} className="reveal rounded-[2rem] overflow-hidden cursor-pointer">
+          <Image src="/images/Couple7.webp" alt="Gallery" width={800} height={800} className="object-cover w-full h-[340px] md:h-full transition-transform duration-700 hover:scale-105" />
+        </div>
 
-        {/* Square */}
-        <Image
-          src="/images/Couple7.webp"
-          alt="Gallery"
-          width={800}
-          height={800}
-          className="reveal rounded-[2rem] object-cover w-full h-[340px] md:h-full"
-        />
       </div>
     </section>
     <section className="py-28 px-6">
@@ -485,7 +456,20 @@ export default function Home() {
     >
       Test Insert
     </button> */}
-
+    {selectedImage && (
+      <div
+        className="fixed inset-0 z-[999] bg-black/90 flex items-center justify-center p-5"
+        onClick={() => setSelectedImage(null)}
+      >
+        <Image
+          src={selectedImage}
+          alt="Gallery Full"
+          width={1600}
+          height={2000}
+          className="max-w-full max-h-[90vh] object-contain rounded-2xl"
+        />
+      </div>
+    )}
     <footer className="min-h-screen flex items-center justify-center px-6 text-center">
       <div className="reveal max-w-4xl">
         <p className="uppercase tracking-[.45em] text-xs text-rose mb-6">See you there</p>
